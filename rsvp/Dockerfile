@@ -1,0 +1,10 @@
+# pull image of jdk
+FROM java:8-jre
+
+# copy jar file to docker file system
+
+ADD ./target/Rsvp-0.0.1-SNAPSHOT.jar /usr/app/Rsvp-0.0.1-SNAPSHOT.jar
+# java -jar <jar fileName>
+WORKDIR usr/app
+ENTRYPOINT ["java","-jar", "Rsvp-0.0.1-SNAPSHOT.jar"]
+EXPOSE 9075

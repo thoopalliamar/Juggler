@@ -1,0 +1,31 @@
+{
+  "cityId": "3",
+  "cityName": "bangalore",
+  "movieList": [
+    {
+      "id": "1",
+      "movieName": "gold",
+      "moviePoster": "poster",
+      "synopsis": null,
+      "movieReleasedate": null,
+      "movieDuration": null,
+      "language": null,
+      "movieGenre": null,
+      "format": null,
+      "hero": null,
+      "heroine": null,
+      "director": null,
+      "theatres": [
+        {
+          "theatreId": "1",
+          "theatreName": null,
+          "theatreLocation": null,
+          "theatreCity": null,
+          "seatLayout": null,
+          "shows": [{ "showTimings": "10:00" }]
+        }
+      ]
+    }
+  ]
+}
+

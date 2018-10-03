@@ -1,0 +1,44 @@
+
+<div class="container">
+   <div *ngIf="recommended_Movies && role=='user'">
+        <strong> <h2>{{title}}</h2></strong>
+       <div class="row">
+           <div class="col-sm-3" *ngFor="let MovieDetails of recommended_Movies; let i = index">
+               <div *ngIf='i < 4'>
+                   <div class="card mt-3 mb-3">
+                       <div class="img">
+                           <img class="card-img-top img-fluid" routerLink="/rec/movie" (click)="getMovieInfo(MovieDetails)"
+                               src="{{MovieDetails.moviePoster}}" onerror="this.src='http://reelcinemas.ae/Images/Movies/not-found/no-poster.jpg';"
+                               style="height:350px">
+                       </div>
+                       <div class="body">
+                           <div class="text-center">
+                               <h5> <b>{{ MovieDetails.name}}</b></h5>
+                           </div>
+                           <p>{{ MovieDetails.movieGenres}} | {{MovieDetails.language}} </p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- <div class="row">
+               <div *ngFor="let MovieDetails of recommended_Movies; let i = index">
+                   <div *ngIf='i < 4'>
+                       <mat-grid-tile colspan="3" rowspan="4 ">
+                           <div>
+                               <mat-card>
+                                   <mat-card-header>
+                                       <mat-card-title>
+                                           <a>{{MovieDetails.name}}</a>
+                                       </mat-card-title>
+                                   </mat-card-header>
+                                   <a routerLink="/rec/movie" (click)="getMovieInfo(movie)"><img mat-card-image src="{{MovieDetails.moviePoster}}"
+                                           alt="Poster of movie"></a>
+                               </mat-card>
+                           </div>
+                       </mat-grid-tile>
+                   </div>
+               </div>
+           </div> -->

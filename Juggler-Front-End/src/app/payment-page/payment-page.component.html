@@ -1,0 +1,87 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="timer"></ngx-spinner>
+<div class="container" style="align-self: center">
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-card style="align-self: center" class="card mt-5 mb-5">
+        <div class="card-header">
+          <i class="fa fa-cc-mastercard" style="font-size:35px"></i>
+          <i class="fa fa-cc-paypal" style="font-size:35px"></i>
+          <i class="fa fa-cc-stripe" style="font-size:35px"></i>
+          <i class="fa fa-cc-visa" style="font-size:35px"></i>
+          <br>
+          <h3 class="headings" style="margin-left:20px; text-align: center">Credit/Debit Card Payment</h3>
+        </div>
+        <form #myForm="ngForm">
+          <div class="form-row">
+            <mat-form-field style="width: 100%;">
+              <input matInput type="number" [(ngModel)]="cardNumber" name="card-number" type="text" size="10" placeholder="Cardnumber  (Eg: XXXX XXXX XXXX XXXX)"
+                data-stripe="number" maxlength="16" minlength="16" required>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field style="width: 48%">
+              <input type="number" matInput [(ngModel)]="expiryMonth" name="expiry-month" type="text" placeholder="Expiry Month (MM)" size="2"
+                data-stripe="exp_month" maxlength="2" minlength="2" required>
+            </mat-form-field>
+            <h4 class="slash" style="margin-top:20px; margin-left:2px">/</h4>
+            <mat-form-field style="margin-left: 2px; width: 49%">
+              <input matInput [(ngModel)]="expiryYear" name="expiry-year" type="text" placeholder="Expiry Year (YY)" size="2" maxlength="2"
+                minlength="2" data-stripe="exp_year" required>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field>
+              <input type="number" matInput [(ngModel)]="cvc" name="cvc" type="text" size="4" maxlength="3" minlength="3" placeholder="CVC"
+                data-stripe="cvc" maxlength="3" required>
+            </mat-form-field>
+          </div>
+          <button mat-button type="submit" [disabled]="!myForm.form.valid" (click)="chargeCreditCard()" style="width: 100%">PayNow ₹.{{bookingDetails.Finalamount}}
+          </button>
+          <br>
+          <br>
+          <div *ngIf="(!msg)">
+            <p style="color:red">{{msg1}}</p>
+          </div>
+          <div *ngIf="(msg)">
+            <p style="color:green">{{msg}}</p>
+          </div>
+          <!-- <p *ngIf="msg" style="color:green">{{msg}}</p>
+         <p ng-if="msg1" style="color: red">{{msg1}}</p> -->
+        </form>
+      </mat-card>
+    </div>
+    <div class="col-sm-6">
+      <div class="Payment-review">
+        <!-- <div class="card mt-5 mb-5"> -->
+        <mat-card style="align-self: center" class="card mt-5 mb-5">
+          <div class="card-header">
+            <i class="fa fa-ticket" style="font-size: 24px">Ticket</i>
+            <br>
+            <h3 class="headings">Payment Summary</h3>
+          </div>
+          <div class="card-body">
+              <img style="padding-top: 1%; float: right; width: 30%; height: 35%;" src={{bookingDetails.moviePoster}}>
+            <!-- {{bookingDetails.emailId}} -->
+            <b>Show ID:-</b> {{bookingDetails.showId}}
+            <br><b>Movie:-</b> {{bookingDetails.nameOfMovie}}
+            <br><b>Theatre:-</b> {{bookingDetails.theaterName}}
+            <br><b>Show:-</b> {{bookingDetails.selectedDate}},{{bookingDetails.screeningTime}} 
+            <br><b>Booked Tickets:-</b> {{bookingDetails.selectedSeats}}
+            <!-- <p *ngFor="let bookSeat of bookedSeats; let i=index">{{bookingDetails.selectedSeats[i]}}</p> -->
+            <br> {{bookingDetails.Finalamount}}
+          </div>
+          <!-- <div class="card-body">
+              {{email}}
+              <b>Show ID:-</b> {{showId}}
+              <br><b>Movie:-</b> {{movieName}}
+              <br><b>Theatre:-</b> {{theatreName}}
+              <br><b>Show:-</b> {{showTiming}} <b>Booked Tickets:-</b>
+              <p *ngFor="let bookSeat of bookedSeats; let i=index">{{bookedSeats[i]}}</p>
+              <br> {{amount}}
+            </div> -->
+          <button mat-button type="submit" (onclick)="getTickets()" routerLink="/ticket" [disabled]="(!msg)">View Ticket
+          </button>
+        </mat-card>
+      </div>
+    </div>
+  </div>

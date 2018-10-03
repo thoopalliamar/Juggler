@@ -1,0 +1,144 @@
+<div class="registration">
+    <div style="text-align: center">
+      <h3 class="headings">
+        Theatre Registration!!
+      </h3>
+    </div>
+  <div class="forms">
+    <mat-horizontal-stepper class="container my-3" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form  [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Step </ng-template>
+              <mat-form-field class="example-full-width">
+                <mat-label>Enter Theatre Name</mat-label>
+                <input matInput placeholder="Enter Theatre name" formControlName="theatreName" type="text" required>
+                <mat-error>This field is required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Enter Theatre License No.</mat-label>
+                <input matInput placeholder="Enter Theatre licenseNoeNo" formControlName="licenseNo" type="text" required>
+                <mat-error>This field is required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Enter Theatre Capacity</mat-label>
+                <input matInput placeholder="Enter Theatre Capacity" formControlName="Capacity" type="number" required>
+                <mat-error>Required/Invalid Input</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Enter Theatre City</mat-label>
+                <input matInput placeholder="Enter Theatre City" type="text" formControlName="City" [matAutocomplete]="auto" required>
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of city" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <div class="button-color">
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+              </div>
+            </form>
+      </mat-step>
+  
+      <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Step </ng-template>
+            <mat-form-field class="example-half-width">
+              <input matInput placeholder="Address" formControlName="Address" type="text" required>
+              <mat-error>Required/The input is invalid</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-half-width">
+              <input matInput placeholder="City" formControlName="City" required>
+              <mat-error>Required/The input is invalid</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-half-width">
+              <input matInput placeholder="State" formControlName="State" required>
+              <mat-error>Required/The input is invalid</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-half-width">
+              <input matInput placeholder="Zip" formControlName="Zip" required>
+              <mat-error>Required/The input is invalid</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-half-width">
+             
+                <input matInput placeholder="Country" formControlName="Country" type="text" [matAutocomplete]="auto1" required>
+                <mat-autocomplete #auto1="matAutocomplete">
+                  <mat-option *ngFor="let cityOption of country" [value]="cityOption">
+                    {{ cityOption }}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error>Required/The input is invalid</mat-error>
+              </mat-form-field>
+              <div class="mt-btn">
+                  <button mat-raised-button color="primary" matStepperPrevious>
+                    <b>Back</b>
+                  </button>
+                  <button mat-raised-button color="primary" matStepperNext>
+                    <b> Next</b>
+                  </button>
+                </div>
+              </form>
+            </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Step </ng-template>
+  
+          <div class="form3">
+            <div class="seatType">
+  
+              <b>Types Of Seats: </b>
+              <!-- <br> -->
+              <mat-form-field class="seats">
+                <input matInput placeholder="Type" formControlName="type1" type="text" required>
+                <mat-error>Required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="seats">
+                <input matInput placeholder="Type" formControlName="type2" type="text" required>
+                <mat-error>Required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="seats">
+                <input matInput placeholder="Type" formControlName="type3" type="text" required>
+                <mat-error>Required</mat-error>
+              </mat-form-field>
+             
+              <button class="bt" > <i class="fa fa-plus-circle" ></i></button>
+            </div>
+  
+            <div class="seatType">
+              <b>Number of seats:</b>
+              <!-- <br> -->
+              <mat-form-field class="seats">
+                <input matInput placeholder="Number" formControlName="n1" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field class="seats">
+                <input matInput placeholder="Number" formControlName="n2" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field class="seats">
+                <input matInput placeholder="Number" formControlName="n3" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <button class="bt" > <i class="fa fa-plus-circle" ></i></button>
+            </div>
+  
+            <div class="button-color1">
+              <button mat-raised-button color="primary" matStepperPrevious>
+                <b> Back</b>
+              </button>
+              <button mat-raised-button color="primary" (click)="stepper.reset()">
+                <b>Reset</b>
+              </button>
+            
+              <button mat-raised-button color="primary" id="add" (click)="openDialog()">
+                <b>Add Theatre </b>
+              </button>
+            </div>
+  
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+    </div>
+  </div>

@@ -1,0 +1,97 @@
+<div class="total">
+<div class="heading" style="text-align: center">
+    <h3 class="headings">
+        <strong>User Registration</strong>
+    </h3>
+</div>
+<div class="forms">
+<mat-horizontal-stepper class="container my-3" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field class="example-full-width">
+                <mat-label>Enter Your Name</mat-label>
+                <input matInput placeholder="Enter your name" formControlName="userName" type="text" required>
+                <mat-error>This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Enter Your Email</mat-label>
+                <input matInput placeholder="Enter Your Email" formControlName="email" type="email" required>
+                <mat-error>Enter valid email</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter Your Password" type="password" formControlName="password" required>
+            </mat-form-field>
+
+           
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter Your MobileNo." formControlName="mobileNo" type="number" required>
+            </mat-form-field>
+
+        </form>
+        <!-- </mat-step> -->
+
+        <!-- <mat-step [stepControl]="secondFormGroup"> -->
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out other details</ng-template>
+
+            <mat-form-field class="example-full-width">
+             
+                <input matInput placeholder="City" formControlName="address" type="text" [matAutocomplete]="auto1" required>
+                <mat-autocomplete #auto1="matAutocomplete">
+                  <mat-option *ngFor="let genre of city" [value]="genre">
+                    {{ genre }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            <br>
+            <mat-radio-group class="example-radio-group">
+                <label class="gender">
+                    <h6>Gender:</h6>
+                </label>
+                <mat-radio-button class="example-radio-button mx-2" *ngFor="let gender of genderGroup" [value]="gender">
+                    {{gender}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div class="next">
+                <!-- <button mat-button matStepperPrevious>Back</button> -->
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form class="example-form">
+            <ng-template matStepLabel>Fill your recommendations</ng-template>
+            <mat-form-field>
+                    <mat-select placeholder="Languages" [formControl]="languageCtrl" multiple>
+                        <mat-option *ngFor="let value of cit" [value]="value">{{value}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            <br>
+            <h5>Select your genres</h5>
+            <div id="container" *ngFor="let genre of genreList; let i = index">
+                <mat-card class="example-card s-2" fxFlex="row wrap" id="{{genre.card}}" class="option-cards" (click)="onclick(genre.id,genre.click,genre.name)">
+                    <div class="genre-cards">
+                        <img mat-card-image src="{{genre.img}}" alt="movie genre">
+                        <mat-card-content class="genre-name"><b>{{genre.name}}</b></mat-card-content>
+                    </div>
+                </mat-card>
+            </div>
+          
+
+             <div class="form-buttons1"> 
+           
+            <button mat-raised-button color="primary" matStepperPrevious><b>Back</b></button>
+            
+            <button mat-raised-button color="primary" (click)="stepper.reset()"><b>Reset</b></button>
+             <!-- </div>  -->
+             
+             <!-- <div class="form-buttons2"> -->
+            <!-- <br> -->
+            <button mat-raised-button color="primary" id="add" (click)="addUser()"><b>Add User</b></button>
+             </div> 
+        </form>
+    </mat-step>
+</mat-horizontal-stepper>
+</div>
+</div>

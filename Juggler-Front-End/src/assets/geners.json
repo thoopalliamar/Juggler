@@ -1,0 +1,27 @@
+[
+   {
+       "name":"Thriller"
+   },
+   {
+       "name":"Fiction"
+   },
+   {
+       "name":"Horror"
+   },
+   {
+       "name":"Romance"
+   },
+   {
+       "name":"Drama"
+   },
+   {
+       "name":"Crime"
+   },
+   {
+       "name":"Action"
+   },
+   {
+       "name":"SuperAction"
+   }
+
+]

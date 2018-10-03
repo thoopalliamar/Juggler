@@ -1,0 +1,6 @@
+spring:
+ cloud:
+   config:
+     uri: http://10.20.1.15:9084
+ application:
+   name: rsvp-service

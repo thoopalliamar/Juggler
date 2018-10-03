@@ -1,0 +1,65 @@
+<!-- Search form -->
+<div class="home-page">
+<div class="search">
+<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Search for Movies" name="search2" #input>
+    <button type="submit" class="but" (click)="searchMovies(input.value)"><i class="fa fa-search"></i></button>
+  </form>
+  </div>
+<app-recommendation></app-recommendation>
+<div class="container">
+    <div class="searchresult">
+        <div *ngIf=search_result1>
+            <strong>
+                <h1>Movie</h1>
+            </strong>
+            <div class="row">
+                <div class="col-sm-3" *ngFor="let movie of search_result1; let i = index">
+                    <div *ngIf="i < 2">
+                        <div class="card ">
+                            <div class="img">
+                                <img class="card-img-top img-fluid" routerLink="/moviedetail" (click)="getMovieInfo(movie)"
+                                    src="{{movie.moviePoster}}" style="height:350px" onerror="this.src='http://reelcinemas.ae/Images/Movies/not-found/no-poster.jpg';">
+                            </div>
+                            <div class="body">
+                                <div class="text-center">
+                                    <h5> <b>{{ movie.movieName}}</b></h5>
+                                </div>
+                                <p>{{ movie.movieGenre}} | {{movie.languages}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cityresult">
+        <!-- <div *ngIf=search_result> -->
+            <strong>
+                <h2>Running Movies</h2>
+            </strong>
+            <div class="row">
+                <div class="col-sm-3" *ngFor="let movie of search_result; let i = index">
+                    <div *ngIf="i < 12">
+                        <div class="card mt-3 mb-3">
+                            <div class="img">
+                                <img class="card-img-top img-fluid" routerLink="/moviedetail" (click)="getMovieInfo(movie)"
+                                    src="{{movie.moviePoster}}" style="height:350px" onerror="this.src='http://reelcinemas.ae/Images/Movies/not-found/no-poster.jpg';">
+                            </div>
+                            <div class="body">
+                                <div class="text-center">
+                                    <h5> <b>{{ movie.movieName}}</b></h5>
+                                </div>
+                                <p>{{ movie.movieGenre}} | {{movie.languages}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+</div>
+
+
+</div>

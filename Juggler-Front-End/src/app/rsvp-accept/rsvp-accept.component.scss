@@ -1,0 +1,86 @@
+.background{
+    // align-content: center;
+    
+    background-image: url("../../assets/images/bg.jpeg");
+  
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+ background-size: 100% 100%;
+
+display:grid;
+}
+
+.eventcard{
+    padding-bottom: -30%;
+    display:grid;
+padding-top: 10%;
+margin-left:25%;
+margin-right: 25%;
+
+}
+.card{
+   // padding-bottom: 20%;
+//height:auto;
+//height: 330px;
+margin-bottom: 60%;
+    //height:330px;
+    //width:auto;
+   // width:100%;
+    //width:650px;
+    background-color: #DFCFBE;
+  // background-image: url("../../assets/images/invitation.jpeg");
+
+  // background-repeat: no-repeat;
+   display:flex;
+  // overflow:hidden;
+ 
+}
+h2{
+   padding-top: 5%;
+    padding-left: 11%;
+    font-family: 'Padauk', sans-serif;
+    display:grid;
+}
+// .button{
+//     width:100px;
+//     height:100px;
+
+
+// }
+.buttons-div{
+    margin-top:-10%;
+    display:grid;
+    overflow: hidden;
+}
+.list{
+    min-width: 500px;;
+    display: grid;
+}
+
+  #add{
+       //margin-top: 35%;
+      margin-left: 40%;
+     width:20px;
+     display: flex;
+    // margin-top:-3%;
+     
+      
+  }
+  mat-radio-button{
+      margin:15%;
+      //margin-left: -4%;
+  }
+  .accept{
+      overflow: hidden;
+      display: block;
+  }
+  .radio{
+      margin-top: 8%;
+     // margin:10%;
+      padding-left: 5%;
+  }
+  button{
+      //padding-top: -55%;
+     // height: 0%;
+  }

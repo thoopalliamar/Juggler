@@ -1,0 +1,33 @@
+<div class="background">
+
+  <div class="eventcard">
+    <mat-card class="card">
+      <!-- <div class="accept"> -->
+        <h2>You can accept your invitation here</h2>
+
+
+        <div class="buttons-div">
+          <!-- <mat-grid-list cols="2" class="list"> -->
+
+            <mat-radio-group class="radio">
+              <!-- <mat-grid-tile> -->
+
+                <mat-radio-button value="1" (click)="accept()">Accept</mat-radio-button>
+
+              <!-- </mat-grid-tile> -->
+
+              <!-- <mat-grid-tile> -->
+                <mat-radio-button value="2" (click)=reject()>Reject</mat-radio-button>
+
+              <!-- </mat-grid-tile> -->
+            </mat-radio-group>
+            <!-- </mat-grid-list> -->
+
+            <button mat-raised-button color="warn" id="add" (click)=submit()><b>Submit</b></button>
+          <!-- </mat-grid-list> -->
+
+        </div>
+      <!-- </div> -->
+    </mat-card>
+  </div>
+</div>

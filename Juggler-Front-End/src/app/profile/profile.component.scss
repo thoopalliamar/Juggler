@@ -1,0 +1,105 @@
+// .container {
+//     position: relative;
+//     width: 100%;
+
+// }
+.back-im {
+  // display: grid;
+     width:100%;
+     // margin-top: 3%;
+     height:80%;
+     background-image: url('http://cdn.in.ticketnew.com/Movie/Devi-movie-images/site-images/images/devi_banner_2.jpg');
+  }
+  // .bg {
+  // opacity: 0.9;
+  // filter: alpha(opacity=2);
+  // //background-image: url('/src/assets/images/coroselMovieProfile.jpg');
+  
+  // }
+  // .container img {
+  //     width: 100%;
+  //     height: auto;
+  // }
+  
+  .btn {
+     position: relative;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     background-color: #555;
+     color: white;
+     font-size: 16px;
+     padding: 12px 24px;
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+     text-align: center;
+    width:200px;
+  }
+  .class2{
+     position: absolute;
+     top: 65%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     background-color: #555;
+     color: white;
+     font-size: 16px;
+     padding: 12px 24px;
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+     text-align: center;
+  }
+  
+  .container .btn:hover {
+     background-color: black;
+  }
+  //  .theatre-profile{
+  //    overflow:hidden;
+  //  }
+  
+  #profile {
+   font-family: 'Padauk', sans-serif;
+   padding-top: 1%;
+   padding-left: 5%;
+   overflow: hidden;
+   //display:block;
+  // position: relative;
+  
+  }
+  .row{
+  background-color: #838487;
+   margin-bottom: -1%;
+   width:100%;
+   margin-left: 0%;
+   margin-right: 0%;
+   overflow: hidden;
+  }
+  .col1{
+   width:50%;
+   display: grid;
+  }
+  .col2{
+   width:50%;
+  display:block;
+   float:right;
+  }
+  .btn1{
+   padding-left: 4.5%;
+   padding-right: 4.5%;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   margin-left: 60%;
+   margin-top: 1%;
+   color:white;
+   background-color: #555;
+   border-radius:5px;
+   border:none;
+   cursor: pointer;
+   overflow: hidden;
+   //display:block;
+  }
+  
+ 

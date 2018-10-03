@@ -1,0 +1,88 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/webjars/jquery/jquery.min.js"></script>
+  <script src="seatlayout.component.ts"></script>
+</head>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <b>{{bookingDetail.nameOfMovie}} </b>
+    </div>
+
+    <div class="col-sm-4">
+      <b>{{bookingDetail.screeningTime}}, {{bookingDetail.theaterName}}</b>
+    </div>
+    <div class="col-sm-4">
+      <b>{{bookingDetail.languages}},{{bookingDetail.format}}</b>
+    </div>
+  </div>
+</div>
+<!-- <p class="seats">Select number of seats:
+  <select (change)="selectChangeHandler($event)">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+</p> -->
+
+<!-- <div class="ArenaLayout">
+  <div class="rows" *ngFor="let row of totalRow; let i=index">
+    <div class="columns" *ngFor="let col of totalCol">
+      <div *ngIf="seatStatus(row,col); else SeatAvailable">
+        <div *ngIf="seatBook(row,col); else SeatBlocked">
+          {{col+1}}
+        </div>
+        <ng-template #SeatBlocked>
+          <div class="seat blocked"> {{seatname[i]}}{{col}}
+          </div>
+        </ng-template>
+      </div>
+      <ng-template #SeatAvailable>
+        <div class="seat available" (click)="onclick(row,col)">
+          {{seatname[i]}}{{col+1}}</div>
+      </ng-template>
+    </div>
+  </div>
+</div> -->
+
+<div class="ArenaLayout">
+  <div class="rows" *ngFor="let row of totalRow; let i=index">
+    <div class="columns" *ngFor="let col of totalCol">
+
+      <div *ngIf="seatBlocked(row,col)">
+        <div class="seat blocked">
+          {{seatname[i]}}{{col+1}}
+        </div>
+      </div>
+
+      <div *ngIf="seatBook(row,col)">
+        <div class="seat booked">
+          {{seatname[i]}}{{col+1}}
+        </div>
+      </div>
+
+      
+
+      <div *ngIf="seatStatus(row,col)">
+        <div class="seat available" (click)="onclick(row,col)">
+          {{seatname[i]}}{{col+1}}
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+<div class="screen">
+  All Eyes here
+</div>
+<div class="bookButton">
+  <button mat-raised-button color="primary" (click)="sendMessage()" routerLink="/billing">Proceed to pay</button>
+</div>

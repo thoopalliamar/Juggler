@@ -1,0 +1,52 @@
+.bg {
+   // background-image: url('/src/assets/images/reg bg.jpg');
+    //background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxFjs58QeFsMQKmX9jX-bTV1PK-vifeXAGt-qvLyBM36JvB8umJg')
+    background-color: #F0EDE5;
+}
+.container {
+    padding-top:25px;
+    padding-right: 30px;
+}
+.error{
+    text-align: center;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height: 150%;
+}
+.mat-form-field {
+    padding-left: 1px;
+    padding-right: 10px;
+    color:black;
+}
+.login {  
+    //color:black;
+    padding-left: 3px;
+    padding-bottom: 0px;
+    margin:0px;
+    
+     }
+     .login button {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    
+    .form p {
+        padding-top: 0px; 
+        color:black; 
+        margin:0px; 
+        padding-right: 0px;
+    }
+    .form p a p {
+        text-align: left;
+        color:royalblue;
+        font-style:inherit;
+        font-size:15px;
+        padding-left:0px;
+        margin-left: -35px;
+        text-transform: capitalize
+       
+    
+    }
+    

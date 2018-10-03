@@ -1,0 +1,47 @@
+<div class="unit">
+    <div class="event">
+    <h3 class="headings" ><b>RSVP Events</b></h3>
+    <div class="bt">
+            <button class="add" ><a routerLink="/rsvp"> Add Event</a></button>
+        </div>
+    </div>
+    <div class="container">
+        <div *ngIf=!isvalid class="noEvent">
+            <h5>No current events available</h5>
+        </div>
+        <div *ngIf=search_result1>
+            <div class="row">
+                <div class="col-lg-6" *ngFor="let item of search_result1">
+                    <!-- <div class="col-xs-6 searchResultItem"> -->
+
+                    <mat-card class="card">
+                        <mat-card-header>
+                            <mat-card-title class="title">
+                                <a><b>{{item.eventName}}</b></a>
+                            </mat-card-title>
+                        </mat-card-header>
+                        <ul style="list-style: none;">
+                            <li><b>Event Hoster:</b> {{item.creatorOfEvent}}</li>
+                            <li><b> Event Name:</b> {{item.eventName}}</li>
+                            <li><b> Event Type:</b> {{item.eventType}} </li>
+                            <li><b> Description:</b>{{item. eventSynopsis}} </li>
+                            <li> <b>Date of Event:</b> {{item.eventDate}} </li>
+                            <li> <b>Time:</b> {{item.eventTime}} </li>
+                            <li> <b>Days:</b> {{item.noOfDays}} </li>
+                            <li> <b>Event duration:</b> {{item.duration}} </li>
+                            <li><b> Guest:</b> [{{item.guestsofEvent}}]</li>
+                            <li><b> Address:</b> {{item.eventLocation}} </li>
+                            <li><b> Hoster mailId:</b> {{item.emailId}} </li>
+                            <li> <b>Invities:</b>[ {{item. invitiesMail}} ]</li>
+                            <li><b> Contact No.:</b> {{item.phoneNo}} </li>
+                        </ul>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+</div>

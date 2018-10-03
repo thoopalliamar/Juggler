@@ -1,0 +1,65 @@
+.bg {
+  padding-top: 1%;
+  background-image: url("/src/assets/images/seats-transparent-background.jpg");
+  //background-image: url("https://thumbs.dreamstime.com/b/screenwriter-desktop-movie-clapper-board-wooden-background-screenwriter-desktop-movie-clapper-board-wooden-background-112470181.jpg");
+  height: 70%;
+  // align-content: center;
+  //  background-repeat: no-repeat;
+  //  width: 100%;
+   
+    background-size: 100% 100%;
+}
+.bg1 {
+  padding-left: 99px;
+  margin: 0%;
+  padding-bottom: 5px;
+}
+.bg1 img {
+  width: 20%;
+  height:17%
+}
+
+.container {
+  opacity:0.8;
+     padding-top: 1%;
+     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1w8vxZggMFIGOxrQh_5ZDkjSwDTMkXQpvUagVsJsNLPMSRygB");
+ }
+.error {
+  text-align: center;
+  color: red;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  height: 150%;
+}
+.md-form button {
+  padding-left: 19px;
+  padding-right: 19px;
+}
+.login {
+  padding-bottom: 0px;
+  margin: 0px;
+}
+.login button {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.form {
+  padding-bottom: 4%;
+}
+.form p {
+  padding-top: 0px;
+  color: black;
+  margin: 0px;
+  padding-right: 0px;
+}
+.form p a p {
+  text-align: left;
+  color: royalblue;
+  font-style: inherit;
+  font-size: 15px;
+  padding-left: 0px;
+  margin-left: -35px;
+  text-transform: capitalize;
+}
+

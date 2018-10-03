@@ -1,0 +1,49 @@
+version: '2.1'
+
+services:
+
+
+
+ api-gateway:
+  build: zuul-apigateway/
+  depends_on:
+   eureka-server:
+    condition: service_healthy
+  restart: always
+  network_mode: "host"
+  image: demo-zuul-service
+  hostname: localhost
+  ports:
+   - 8092:8092
+  healthcheck:
+   test: "exit 0"
+
+ eureka-server:
+  build: eureka-server/
+  restart: always
+  network_mode: "host"
+  depends_on:
+   config-service:
+    condition: service_healthy
+  image: demo-eureka-service
+  hostname: localhost
+  ports:
+   - 9090:9090
+  healthcheck:
+   test: "exit 0"
+
+
+
+ config-service:
+  build: config-service/
+  image: config-server
+  container_name: config-server
+  restart: always
+  network_mode: "host"
+  hostname: localhost
+  ports:
+   - 8891:8891
+  healthcheck:
+   test: "exit 0"
+
+

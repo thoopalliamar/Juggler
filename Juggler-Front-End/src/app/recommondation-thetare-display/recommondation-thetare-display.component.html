@@ -1,0 +1,70 @@
+<div class="container" cols="12">
+    <div *ngIf=theatreList>
+      <div>
+        <div class="flex-container">
+          <mat-tab-group>
+            <div *ngFor="let everyday of tomorrow">
+              <mat-tab label="{{everyday|date: 'MMM'}} {{everyday|date: 'dd'}} {{everyday|date: 'EEE'}}">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <mat-card>
+                      <img mat-card-image src="{{movieObject2.moviePoster}} " alt="Poster of movie" height="400" width="200">
+                    </mat-card>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="title">
+                      <h3>
+                        <b>{{movieObject2.name}}</b>
+                      </h3>
+                    </div>
+                    <div *ngFor="let theatre of theatreList; let i = index">
+                      <div *ngIf='i < 9'>
+                        <mat-list role="list">
+                          <div class="listOfItem">
+                            <mat-list-item role="listitem">
+                              <div class="hoverWrapper">
+                                <a class="CamelCase" >
+                                  <strong>{{theatre.theatreName}}</strong>
+                                </a>
+                                <div id="display" *ngFor="let showtime of theatre.showTimings">
+                                  <a class="showTime display" routerLink="/seat-layout" (click)="saveShow(theatre,showtime)">
+                                    <strong >{{showtime}}</strong>
+                                  </a>
+                                </div>
+                                <div id="hoverShow1">
+                                  <div id="display" *ngFor="let seat of theatre.typesOfSeats">
+                                    <a class="DisplayBorder" routerLink="/seat-layout">{{seat}}</a>
+                                  </div>
+                                  <br>
+                                  <div *ngIf="determineDay(everyday|date: 'EEE');else notWeekend">
+                                    <div id="display" *ngFor="let price of theatre.weekends_Price">
+                                      <a id="spacing" routerLink="/seat-layout">
+                                        Rs.{{price}}
+                                      </a>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <ng-template #notWeekend>
+                                    <div id="display" *ngFor="let price of theatre.weekdays_Price">
+                                      <a id="spacing" routerLink="/seat-layout">
+                                        Rs.{{price}}
+                                      </a>
+                                    </div>
+                                  </ng-template>
+                                </div>
+                              </div>
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                          </div>
+                        </mat-list>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+            </div>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+  </div>

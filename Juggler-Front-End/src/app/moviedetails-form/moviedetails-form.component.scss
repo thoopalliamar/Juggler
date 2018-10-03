@@ -1,0 +1,59 @@
+body {
+  padding : 10px ;
+ 
+ }
+ 
+ // .row{
+ //   margin-left: 6%;
+ // }
+ 
+ .card-header{
+  text-transform: capitalize;
+ }
+ 
+
+ 
+ #exTab3 .nav-pills > li > a {
+  border-radius: 4px 10px 0 0 ;
+ }
+ 
+ #exTab3 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+ }
+ .list-group-item textarea {
+  border:none;
+  margin-left: 15%;
+  margin-top: -90px;
+  margin-bottom: 2%;
+  max-width: 80%;
+  position: relative;
+ 
+ 
+ }
+ 
+ .summary {
+  display:column;
+  padding-right: 3%;
+  width:27%;
+ }
+ 
+ .text {
+  display:column;
+  //width:75%;
+ }
+ 
+ .list-group-item summary {
+  padding-bottom: 2%;
+ }
+ .container {
+  margin-left: 8%;
+ }
+ .booking{
+  overflow:hidden;
+ }
+ .img-fluid{
+  padding-top: 3%;
+ }
+ 

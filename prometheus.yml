@@ -1,0 +1,112 @@
+global: 
+  scrape_interval:     20s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['10.20.1.16:9090']
+    
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['10.20.1.16:3000']
+    
+  - job_name: 'eureka-server'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.216:9083']
+  
+  - job_name: 'apigateway'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.20:9085']
+
+  - job_name: 'config-server'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9084']
+  
+  - job_name: 'theatre'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9071']
+      
+  - job_name: 'distributor'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9070']
+    
+  - job_name: 'login'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9074']
+   
+      
+  - job_name: 'userprofile'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9073']
+      
+  - job_name: 'recommendations'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9078']
+  
+  - job_name: 'movie-schedule'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9072']
+  
+      
+  - job_name: 'movie-search'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s  
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9077']
+      
+  - job_name: 'email-service'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.16:9076']
+      
+  - job_name: 'payment'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9081']
+      
+  - job_name: 'ticket-engine'
+    metrics_path: /actuator/prometheus
+    scrape_interval: 30s
+    scrape_timeout: 30s
+    static_configs:
+      - targets: ['10.20.1.15:9079']
+      
+
+            
+ 
+          
+      
+      

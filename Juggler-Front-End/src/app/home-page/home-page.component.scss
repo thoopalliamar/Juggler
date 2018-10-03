@@ -1,0 +1,133 @@
+
+// .active-pink input[type=text] {
+//   border-bottom: 1px solid #D9491D;
+//   box-shadow: 0 1px 0 0  #D9491D;
+// }
+
+//  .active-pink .fa {
+//   color: #525F7F;
+// }
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid #D9491D;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background:  #D9491D;
+  color:white;
+  font-size: 17px;
+  border: 1px solid #3D3D3B;
+
+  cursor: pointer;
+}
+
+form.example button:hover {
+  border: solid 1px #525F7F;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.search{
+  margin-top: 10px;
+}
+.but{
+  background-color: #D9491D;
+}
+.h1{
+  font-family:'Roboto Slab', serif;
+ }
+.fa{
+  color: white;
+}
+// .form-inline{
+//  margin-left: 70%;
+//   width:350px;
+//   //max-width: 90%;
+//   display: inline-block
+// }
+// .search{
+// //   margin-left: 70%;
+//   width:100%;
+//   overflow: hidden;
+//   display:inline-block
+  
+
+//  }
+// .but{
+//   background-color:  #D9491D;
+//   width:40px;
+//   cursor: pointer;
+
+// }
+
+ //.input{
+  //     font-size: 15px;
+  //    border: 2px solid blue;
+  //   margin-left: 750px;
+  //     width: 30%;
+  //     height: 37px;
+  //     float:left;
+  //  }
+  .container{
+    margin:5%
+  }
+  // .btn-block{
+  //   color: white;
+  //   background-color:blue;
+  //   float:left;
+  //     width:100px;
+  // }
+  // .input:focus {
+  //   color:black;
+  
+  // }
+  // .btn-block:hover{
+  //   border: 0;
+  //   box-shadow: none;
+  //   border-left: solid 2px #ccc;
+  // }
+  
+  
+  .cityresult{
+  
+   margin-top: 20px;
+  }
+  // .card{
+  //   margin-right: 4%
+  // }
+ 
+ .home-page{
+   overflow: hidden;
+ }
+  
+  h5{
+   text-transform: capitalize;
+  }
+  .img{
+   height:90%;
+  }
+  .body{
+   height:10%;
+   padding-top: 2%
+  }
+  .body p{
+   text-align: center
+  }
+  .card{
+   cursor:pointer;
+   margin:2%;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+  

@@ -1,0 +1,115 @@
+<div class="total">
+  <div style="text-align: center">
+    <h3 class="headings">
+      Distributor Dashboard
+    </h3>
+  </div>
+  <div class="forms">
+    <mat-horizontal-stepper class="container my-3" [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Movie Name</mat-label>
+            <input matInput placeholder="Movie Name" formControlName="movie_name" type="text" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Movie Poster</mat-label>
+            <input matInput placeholder="Movie Poster(URL)" formControlName="movie_poster" type="url" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Format</mat-label>
+            <input matInput placeholder="Ex:2D/3D" type="text" formControlName="_format" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Releasedate</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Releasedate" formControlName="movie_Releasedate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Genres</mat-label>
+            <input matInput placeholder="Genre" formControlName="movie_Genres" type="text" [matAutocomplete]="auto1" required>
+            <mat-autocomplete #auto1="matAutocomplete">
+              <mat-option *ngFor="let genre of genre" [value]="genre">
+                {{ genre }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <div class="next">
+            <!-- <button mat-stroked-button color="warn" matStepperNext><b>Next</b></button> -->
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+
+      </mat-step>
+      <!-- </mat-step> -->
+      <!-- <div class="text2"> -->
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field class="example-half-width">
+            <mat-label>Language</mat-label>
+            <input matInput placeholder="Language" formControlName="_languages" type="text" [matAutocomplete]="auto" required>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let cityOption of city" [value]="cityOption">
+                {{ cityOption }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="example-half-width">
+            <mat-label>Actor</mat-label>
+            <input matInput placeholder="Actor" formControlName="_actor" type="text" required>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-half-width">
+            <mat-label>Actress</mat-label>
+            <input matInput placeholder="Actress" formControlName="_actress" type="text" required>
+          </mat-form-field>
+          <mat-form-field class="example-half-width">
+            <mat-label>Duration</mat-label>
+            <input matInput placeholder="Ex:-hh:mm:ss" formControlName="movie_Duration" type="text" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-half-width">
+            <mat-label>Directors</mat-label>
+            <input matInput placeholder="Director" formControlName="_directors" type="text" required>
+          </mat-form-field>
+          <mat-form-field class="example-half-width">
+            <mat-label>Synopsis</mat-label>
+            <textarea matInput placeholder="Synopsis" formControlName="movie_Synopsis" type="text" required></textarea>
+          </mat-form-field>
+          <div class="option">
+            <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+            <!-- </div> -->
+            <!-- <div class="add"> -->
+            <button mat-raised-button color="primary" id="add" (click)="addMovie()">
+              <b>Add Movie</b>
+            </button>
+          </div>
+
+
+        </form>
+      </mat-step>
+
+    </mat-horizontal-stepper>
+  </div>
+</div>
+<!-- angular-app:
+  build: Angular-project/
+  image: angular
+  restart: always
+  container_name: Angular
+  network_mode: "host"
+  hostname: localhost
+  ports:
+    - 4200:4200
+  healthcheck:
+    test: "exit 0"   -->

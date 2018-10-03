@@ -1,0 +1,72 @@
+<!-- <div class="container mt-4">
+<h3>Trending Movies</h3>
+<mat-grid-list cols="12" rowHeight="80px" fxLayout="row wrap" >
+    <div *ngFor="let movie of movies" id="container">
+        <mat-grid-tile colspan="3" rowspan="6">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title><a>{{movie.movieTitle}}</a></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{movie.movieposter}}" alt="Poster of movie">
+                <mat-card-actions>
+                    <button mat-button routerLink="/moviedetail">Movie Details</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>
+</div> -->
+
+<div class="container">
+<div *ngIf=movies>
+   
+<div class="row">
+    <div  class="col-sm-4" *ngFor="let movie of movies; let i = index">
+      <div *ngIf="i < 9">
+        <div class="card mt-3 mb-3">
+          <div class="card-header text-center">
+            <b>{{ movie.movieTitle}}</b>
+          </div>
+          <div class="card-body">
+            <img class="card-img-top img-fluid" src="{{movie.movieposter}}" alt="{{movie.movieName}}" style="height: 460px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!-- <header role="banner">
+        <h1>Bootstrap 4 Alpha - Responsive Flexbox Cards</h1>
+    </header>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="//placehold.it/720x350" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="//placehold.it/720x350" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="//placehold.it/720x350" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->

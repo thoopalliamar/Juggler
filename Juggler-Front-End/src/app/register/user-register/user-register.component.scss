@@ -1,0 +1,101 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+   float:left;
+}
+// .total {
+//   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1w8vxZggMFIGOxrQh_5ZDkjSwDTMkXQpvUagVsJsNLPMSRygB");
+// }
+.forms {
+  
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+.container {
+  border-radius: 0.5%;
+  background-color:white;
+  border-block-end-style: groove;
+}
+.example-radio-group{
+  margin-left:5%;
+ font-display: inline;
+}
+
+
+.next button {
+  margin-left: 30%;
+  margin-top: -2%
+}
+.next button b{
+  margin-left: -2%;
+}
+ 
+  .example-full-width {
+    width: 55%;
+    padding-right: 14%;
+    padding-left: 5%;
+   display:grid;
+   
+ }
+  
+#container {
+  display: inline-flex;
+  flex-flow: wrap;
+}
+
+mat-card {
+  background-size: cover;
+}
+.genre-name {
+  color:  #B93A32;
+  
+}
+mat-error {
+  color: rgb(34, 47, 233);
+}
+label {
+  display: inline-block;
+}
+.example-full-width{
+  width: 51%;
+  padding-right: 15%
+}
+.second-form{
+  width: 51%;
+  float: left;
+  padding-right: 40%
+}
+.genre-cards{
+  padding-right: 10%;
+  padding-bottom: 10%
+}
+.genre-break{
+margin-bottom: 20px
+}
+.option-cards{
+  margin: 5%;
+  width: 120px;
+  height: 160px;
+  cursor: pointer;
+}
+h5{
+  font-family: 'Padauk', sans-serif;
+}
+.headings{
+  font-family: 'Padauk', sans-serif;
+padding-top: 1%;
+}
+.form-buttons1 {
+  display:block;
+  margin-left:3.5%;
+  margin-top: 2%;
+}
+.form-buttons1 button {
+  margin:1%;
+  margin-bottom: 6%;
+}
+#add {
+  margin-left: 33%;
+}

@@ -1,0 +1,31 @@
+<div class="container col-sm-6">
+ <div class="card">
+   <div class="row ">
+     <div class="card-block px-6">
+       <div class="title h5 text-center">Juggler</div>
+       <h6 class="card-title text-center">Your booking is confirmed </h6>
+       <p class="card-subtitle text-center">Show Id:-{{bookingDetails.showId}}</p>
+       <div class="card-body">
+         <div class="direction">
+           <!-- <div class="col-sm-6"> -->
+           <img style="padding-top: 2%;  width: 30%; height: 50%;" src={{bookingDetails.moviePoster}}>
+           <!-- </div> -->
+           <div class="col-sm-6">
+           <p style="padding-top: 2%">
+             <b>Movie Name:- </b>{{bookingDetails.nameOfMovie}}
+             <br>
+             <b>Show:- </b>{{bookingDetails.screeningTime}}|{{bookingDetails.selectedDate}}
+             <br>
+             <b>Seat Numbers:- </b>{{bookingDetails.selectedSeats}}
+             <br>
+             <b>Theatre Name:- </b>{{bookingDetails.theaterName}}
+             <br>
+             <b>Theatre Location:- </b>{{bookingDetails.theatreLocation}}
+           </p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>

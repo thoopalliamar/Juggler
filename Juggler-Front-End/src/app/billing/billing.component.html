@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<div class="container">
+ <div class="row">
+   <div class="col-sm-8">
+      <div class="email">
+          <h5>Email-Id:</h5>
+         <mat-form-field>
+          <input matInput placeholder="Enter Email-Id" #input1>
+         </mat-form-field>
+         <button mat-stroked-button color="warn" (click)="email(input1.value)">Submit</button>
+       </div>
+     <div class="heading">
+       <h3 class="headings">Apply Promo Code</h3>
+     </div>
+     <div class="example-container">
+       <mat-form-field>
+         <input matInput placeholder="Enter Promo Code, If Available" #input>
+       </mat-form-field>
+       <button mat-stroked-button color="warn" (click)="promo(input.value)">Apply</button>
+     </div>
+
+     <br>
+     <div *ngIf=result>
+       <strong>
+         <h3 class="headings">Applicable Promos</h3>
+       </strong>
+       <div class="row">
+         <div class="col-sm-4" *ngFor="let promos of result; let i = index">
+           <div *ngIf="i < 9">
+             <div class="card mt-3 mb-3">
+               <div class="card-header text-center">
+                 <b>{{promos.code}}</b>
+               </div>
+               <div class="card-body">
+                 <div class="view overlay">
+                   <img class="card-img-top img-fluid" src="{{promos.image}}" alt="{{promos.code}}" (click)="promo(promos.code)" style="height: 200px">
+                   <div class="mask flex-center rgba-black-strong">
+                     <p class="white-text">
+                       {{promos.code}}
+                       <br> {{promos.description}}
+                     </p>
+                   </div>
+                 </div>
+                 <div class="beauty">
+                   <button mat-flat-button (click)="promo(promos.code)">Apply</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+    </div>
+
+
+    <div class="col-sm-4">
+      <div class="billing">
+        <div class="card mt-5 mb-5">
+          <div class="card-header">
+            <i class="fa fa-ticket" style="font-size: 24px">Ticket</i>
+            <br>
+            <h3 class="headings">Payment Summary</h3>
+          </div>
+          <div class="card-body">
+            <h3>
+              <p>
+                <b>{{bookingDetails.nameOfMovie}}</b>-{{bookingDetails. languages}}</p>
+            </h3>
+            <p>{{bookingDetails.movieGenre}}|{{bookingDetails.format}}</p>
+            <hr>
+            <div class="text">
+              Theater
+            </div>
+            <br> {{bookingDetails.theaterName}}
+            <hr>
+            <div class="text">
+              Show Time
+            </div>
+            <br> {{bookingDetails.selectedDate}},{{bookingDetails.screeningTime}}
+            <hr> {{bookingDetails.selectedSeatType}},{{bookingDetails.totalNoOfTickets}}Seat(s)
+            <br> {{bookingDetails.selectedSeats}}
+            <p>Ticket Amount : {{bookingDetails.totalAmount}}</p>
+            <div *ngIf="result1!=null; else notbool">
+              <div *ngIf="formula(bookingDetails.totalAmount,result1.amount); else notshow">
+                <p>promocode applied : {{result1.amount}}</p>
+                <a> Final Amount : {{value}}</a>
+              </div>
+              <ng-template #notshow>
+                <p>This promocode is not applicable </p>
+                Final Amount : {{value}}
+
+              </ng-template>
+            </div>
+            <ng-template #notbool>
+              <div *ngIf="bool">
+                <!-- <p>This promocode is not valid</p>  -->
+                <p>This promocode is not valid</p>
+                Final Amount :{{value}}
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="bill">
+          <button mat-flat-button color="warn" (click)="onclick()" routerLink="/payment-page">Proceed to checkout</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
+
+
+<!-- <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+              <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+            </div>
+          </div>
+        </div>
+      </div> -->

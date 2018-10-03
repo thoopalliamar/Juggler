@@ -1,0 +1,15 @@
+
+
+<mat-form-field>
+        <mat-select placeholder="Languages" [formControl]="languageCtrl" multiple>
+
+            <mat-option *ngFor="let value of city" [value]="value">{{value}}</mat-option>
+       
+        </mat-select>
+    </mat-form-field>
+
+
+<!-- <div *ngFor="let language of city" let i=index>
+
+    {{language}}
+    </div> -->

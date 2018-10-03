@@ -1,0 +1,19 @@
+#spring:
+# application:
+#  name: theatre-registration
+# data:
+#  mongodb:
+#    database: theatre
+#    host: localhost
+#    port: "27017"
+#    uri: mongodb://localhost/theatre
+#    username: ""
+#eureka:
+# client:
+#  register-with-eureka: "true"
+#  fetch-registry: "true"
+#  serviceUrl:
+#    defaultZone: http://localhost:9084/eureka/
+server:
+  port: "9071"
+   

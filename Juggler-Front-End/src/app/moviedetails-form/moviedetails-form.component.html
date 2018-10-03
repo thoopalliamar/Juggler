@@ -1,0 +1,60 @@
+<div class="booking" >
+  <!-- [ngStyle]="'background-image': ({{movieObject.moviePoster}})" -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="card mt-5 mb-5">
+        <div class="card-header">
+          <strong> {{movieObject.movieName}}</strong>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <!-- height="400%" width="200% -->
+              <img src={{movieObject.moviePoster}} class="img-fluid" style="width:400px;height:500px;">
+              <!-- height="250px" -->
+            </div>
+            <div class="details col-sm-7">
+              <ul class="list-group">
+
+                <li class="list-group-item">
+                  <strong>Language: </strong> {{movieObject.languages}}
+                </li>
+                <li class="list-group-item">
+                  <strong>Genre: </strong>
+                  {{movieObject.movieGenre}}
+                </li>
+                <li class="list-group-item">
+                  <strong>Director: </strong>
+                  {{movieObject.director}}
+                </li>
+                <li class="list-group-item">
+                  <strong>Crew: </strong>
+                  {{movieObject.hero}},{{movieObject.heroine}}
+                </li>
+                <li class="list-group-item">
+                  <strong>Release Date: </strong>
+                  {{movieObject.movieReleasedate}}
+                </li>
+                <!-- <li class="list-group-item">
+                  <div class="area">
+                     <strong>Summary: </strong> {{movieObject.synopsis}} -->
+                    <!-- <div class="summary"><strong><p>Summary:</p> </strong></div><div class="text"><textarea rows="2" cols="34"> {{movieObject.synopsis}}</textarea></div>
+                     </div>
+                  </li>  -->
+                  <li class="list-group-item">
+                      <strong>Summary: </strong> {{movieObject.synopsis}}
+                    </li>
+                <li class="list-group-item">
+                  <button mat-raised-button color="warn" routerLink="/display-theatre">Book Now</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

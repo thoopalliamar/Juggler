@@ -1,0 +1,67 @@
+
+.example-full-width {
+  width: 55%;
+   padding-right: 14%;
+   padding-left: 5%;
+  display:grid;
+}
+.weekdays {
+  padding-left: 5%;
+  //padding-right: 2%;
+  margin-top: 1%;
+  
+}
+.price {
+  margin:1%;
+  
+  margin-top: 0%;
+  margin-bottom: 0%;
+  
+}
+.mat-raised-button {
+  min-width: 2%;
+}
+.bt{
+  margin-left: 2%;
+color:white;
+width:5%;
+background-color: blue
+}
+.bt i{
+ // font-size:24px
+}
+
+.forms {
+  
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+.headings{
+  font-family: 'Padauk', sans-serif;
+padding-top: 1%;
+}
+.button-color{
+  margin-left: 50%;
+}
+
+ .search {
+  margin-left: 19%;
+  margin-top: -4%;
+  padding-bottom: 3%;
+}
+
+
+.example-option-img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+[dir='rtl'] .example-option-img {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+
+
+  

@@ -1,0 +1,138 @@
+<div class="total">
+    <div style="text-align: center">
+      <h3 class="headings">
+        <strong>Movie Screening Details</strong>
+      </h3>
+    </div>
+    <div class="forms">
+      <mat-horizontal-stepper class="container my-3" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form>
+            <ng-template matStepLabel>Add Movie for Screening</ng-template>
+            <mat-form-field class="add">
+              <input [(ngModel)]="title" matInput placeholder="Movie Search" name="movie" required>
+            </mat-form-field>
+            <div class="search">
+              <button mat-raised-button color="primary" type="search" (click)="getMovie(title)">
+                <b>search</b>
+              </button>
+            </div>
+            <div class="container" *ngFor="let movie of movies">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card mt-5 mb-5">
+                    <div class="card-header">
+                      <strong> {{movie.movieName}} </strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <img src={{movie.moviePoster}} class="img-fluid" height="400%" width="200%">
+                        </div>
+                        <div class="col-sm-7">
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <strong>Summary: </strong> {{movie.synopsis}}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>language: </strong> {{movie.languages}}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Genre: </strong>
+                              {{movie.movieGenres}}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Director: </strong>
+                              {{movie.directors}}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Crew: </strong>
+                              {{movie.actors}}, {{movie.actress}}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Release Date: </strong>
+                              {{movie.movieReleaseDate}}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Running Time: </strong>
+                              {{movie.movieDuration}}
+                            </li>
+                            <li class="list-group-item">
+                              <button mat-raised-button color="primary" (click)="addMve(movie)">
+                                <b>Add Movie</b>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="button-color">
+            <button mat-raised-button color="primary" matStepperNext>
+              <b>Next</b>
+            </button>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill the Screening Details</ng-template>
+            <div class="timings">
+              <mat-form-field class="example-full-width">
+                <mat-label>Enter No. of Shows:</mat-label>
+                <input matInput placeholder="Enter No. of Shows" formControlName="show_Numbers" type="number" required>
+                <mat-error>This field is required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Enter Show Timings:</mat-label>
+                <input matInput placeholder="Ex:hh:mm,hh:mm" formControlName="show_Timings" type="text" required>
+                <mat-error>This field is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="weekdays">
+              <b> Enter WeekDays Price:</b>
+              <br>
+              <mat-form-field class="price">
+                <input matInput placeholder="Platnium" formControlName="n1" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field class="price">
+                <input matInput placeholder="Gold" formControlName="n2" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field class="price">
+                <input matInput placeholder="Silver" formControlName="n3" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+            
+            </div>
+            <div class="weekdays">
+              <b> Enter WeekEnd Price:</b>
+              <br>
+              <mat-form-field class="price">
+                <input matInput placeholder="Platnium" formControlName="n4" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field class="price">
+                <input matInput placeholder="Gold" formControlName="n5" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+              <mat-form-field class="price">
+                <input matInput placeholder="Silver" formControlName="n6" type="number" required>
+                <mat-error>The input is invalid</mat-error>
+              </mat-form-field>
+             
+            </div>
+            <div class="button-color">
+              <button mat-raised-button color="primary" (click)="onSubmit(movie)">
+                <b>Add Screening</b>
+              </button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>

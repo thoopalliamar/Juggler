@@ -1,0 +1,200 @@
+<!-- <div *ngIf=theatreList>
+  <div class="container col-sm-12">
+
+    <div class="col-sm-4">
+      <img src="{{movieObject2.moviePoster}} " alt="Poster of movie" height="400" width="300">
+    </div>
+    <div class="col-sm-8">
+      <div class="title">
+        <h3>
+          <b>{{movieObject2.movieName}}</b>
+        </h3>
+      </div>
+      <mat-form-field class="example-full-width">
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="value">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+ 
+      <div *ngFor="let theatre of theatreList; let i = index">
+        <div *ngIf='i < 9'>
+          <mat-list role="list">
+            <div class="listOfItem">
+              <mat-list-item role="listitem">
+
+                <div class="hoverWrapper">
+                  <a class="CamelCase">
+                    <strong>{{theatre.theatreName}}</strong>
+                  </a>
+                  <div id="display" *ngFor="let showtime of theatre.showTimings">
+                    <a class="showTime display" routerLink="/seat-layout" (click)="saveShow(theatre,showtime,value)">
+                      <strong>{{showtime}}</strong>
+                    </a>
+                  </div>
+                  <div id="hoverShow1">
+                    <div id="display" *ngFor="let seat of theatre.typesOfSeats">
+                      <a class="DisplayBorder" routerLink="/seat-layout">{{seat}}</a>
+                    </div>
+                    <br>
+                    <div *ngIf="determineDay(value|date: 'EEE');else notWeekend">
+                      <div id="display" *ngFor="let price of theatre.weekends_Price">
+                        <a id="spacing" routerLink="/seat-layout">
+                          Rs.{{price}}
+                        </a>
+                      </div>
+                    </div>
+                    <br>
+                    <ng-template #notWeekend>
+                      <div id="display" *ngFor="let price of theatre.weekdays_Price">
+                        <a id="spacing" routerLink="/seat-layout">
+                          Rs.{{price}}
+                        </a>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </div>
+          </mat-list>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div> -->
+
+<!-- <div *ngIf=theatreList>
+    <div class="container col-sm-12">
+  
+      <div class="col-sm-4">
+        <img src="{{movieObject2.moviePoster}} " alt="Poster of movie" height="400" width="200">
+      </div>
+      <div class="col-sm-8">
+        <div class="title">
+          <h3>
+            <b>{{movieObject2.movieName}}</b>
+          </h3>
+        </div>
+        <mat-form-field class="example-full-width">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="value">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+   
+        <div *ngFor="let theatre of theatreList; let i = index">
+          <div *ngIf='i < 9'>
+            <mat-list role="list">
+              <div class="listOfItem">
+                <mat-list-item role="listitem">
+  
+                  <div class="hoverWrapper">
+                    <a class="CamelCase">
+                      <strong>{{theatre.theatreName}}</strong>
+                    </a>
+                    <div id="display" *ngFor="let showtime of theatre.showTimings">
+                      <a class="showTime display" routerLink="/seat-layout" (click)="saveShow(theatre,showtime,value)">
+                        <strong>{{showtime}}</strong>
+                      </a>
+                    </div>
+                    <div id="hoverShow1">
+                      <div id="display" *ngFor="let seat of theatre.typesOfSeats">
+                        <a class="DisplayBorder" routerLink="/seat-layout">{{seat}}</a>
+                      </div>
+                      <br>
+                      <div *ngIf="determineDay(value|date: 'EEE');else notWeekend">
+                        <div id="display" *ngFor="let price of theatre.weekends_Price">
+                          <a id="spacing" routerLink="/seat-layout">
+                            Rs.{{price}}
+                          </a>
+                        </div>
+                      </div>
+                      <br>
+                      <ng-template #notWeekend>
+                        <div id="display" *ngFor="let price of theatre.weekdays_Price">
+                          <a id="spacing" routerLink="/seat-layout">
+                            Rs.{{price}}
+                          </a>
+                        </div>
+                      </ng-template>
+                    </div>
+                  </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+              </div>
+            </mat-list>
+          </div>
+        </div>
+      </div>
+  
+  
+    </div> 
+  </div> -->
+
+  <div class=container col-sm-12>
+      <div *ngIf=theatreList>
+        <div class="row">
+    <div class="col-sm-4">
+        <img src="{{movieObject2.moviePoster}} " alt="Poster of movie" height="340px" width="300px">
+    </div>
+    <div class="col-sm-8">
+        <div class="title">
+            <h3>
+              <b>{{movieObject2.movieName}}</b>
+            </h3>
+          </div>
+          <mat-form-field class="example-full-width">
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="value">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+            
+          <div *ngFor="let theatre of theatreList; let i = index">
+              <div *ngIf='i < 9'>
+                <mat-list role="list">
+                  <div class="listOfItem">
+                    <mat-list-item role="listitem">
+      
+                      <div class="hoverWrapper">
+                        <a class="CamelCase">
+                          <strong>{{theatre.theatreName}}</strong>
+                        </a>
+                        <div id="display" *ngFor="let showtime of theatre.showTimings">
+                          <a class="showTime display" routerLink="/seat-layout" (click)="saveShow(theatre,showtime,value)">
+                            <strong>{{showtime}}</strong>
+                          </a>
+                        </div>
+                        <div id="hoverShow1">
+                          <div id="display" *ngFor="let seat of theatre.typesOfSeats">
+                            <a class="DisplayBorder" routerLink="/seat-layout">{{seat}}</a>
+                          </div>
+                          <br>
+                          <div *ngIf="determineDay(value|date: 'EEE');else notWeekend">
+                            <div id="display" *ngFor="let price of theatre.weekends_Price">
+                              <a id="spacing" routerLink="/seat-layout">
+                                Rs.{{price}}
+                              </a>
+                            </div>
+                          </div>
+                          <br>
+                          <ng-template #notWeekend>
+                            <div id="display" *ngFor="let price of theatre.weekdays_Price">
+                              <a id="spacing" routerLink="/seat-layout">
+                                Rs.{{price}}
+                              </a>
+                            </div>
+                          </ng-template>
+                        </div>
+                      </div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                  </div>
+                </mat-list>
+              </div>
+            </div>
+    </div>
+   
+    </div>
+    </div>
+  </div>
