@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.stackroute.juggler.kafka.domain.InputUser;
 import com.stackroute.juggler.kafka.domain.UserProfile;
 import com.stackroute.juggler.userprofile.exceptions.ProfileAlreadyExitsException;
@@ -24,20 +23,21 @@ import com.stackroute.juggler.userprofile.service.UserService;
 @RestController
 public class UserController {
 
-	// creating the userservice object to use the methods in it
+	// creating the userservice object to use the methods in the controller
 	private UserService userService;
 
 	//logger is used to log status of code
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	// constructer
+	// constructer which auto wires the Service layer to Controller layer
 	@Autowired
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}
 
-	// mapping is to accept new user and save the data to database and messagebus
-	@RequestMapping(value = "/regestration", method = RequestMethod.POST)
+	// Mapping is to accept new user and save the data to database and messagebus
+	// This is post method and takes input from the user in the inputuser domain format
+	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody InputUser inputUser) throws ProfileAlreadyExitsException {
 		// InputUser userobj = null;
 		try {
@@ -55,7 +55,7 @@ public class UserController {
 
 	}
 
-	// Views the user in the database we take user id in url itself
+	// Views the user in the database we take user id in url itself and fetch the data from database
 	@RequestMapping(value = "/user/{userid}", method = RequestMethod.GET)
 	public ResponseEntity<?> viewuser(@PathVariable String userid) throws UserDoesNotExistsException {
 		try {
@@ -71,7 +71,7 @@ public class UserController {
 
 	}
 
-	//Updates user initially we find the user and allow to update
+	//Updates user initially we find the user and allow to update only existing users can perform this operation
 	@RequestMapping(value = "/user/{userid}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateuser(@PathVariable String userid, @RequestBody UserProfile user)
 			throws UpdateFailedException, UserDoesNotExistsException {
