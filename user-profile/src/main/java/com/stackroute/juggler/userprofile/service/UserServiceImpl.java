@@ -2,14 +2,12 @@ package com.stackroute.juggler.userprofile.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.aggregation.ArithmeticOperators.Add;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
 import com.stackroute.juggler.kafka.domain.InputUser;
 import com.stackroute.juggler.kafka.domain.Movie;
 import com.stackroute.juggler.kafka.domain.UserProfile;
@@ -23,7 +21,7 @@ import com.stackroute.juggler.userprofile.repository.UserRepository;
 public class UserServiceImpl implements UserService {
 	
 	// logger is used to log status of code
-		private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	// Creating a object of user repository
 	private UserRepository userRepository;
@@ -32,7 +30,6 @@ public class UserServiceImpl implements UserService {
 	// using repository in service implementation
 	@Autowired
 	public UserServiceImpl(UserRepository userRepository, KafkaConfiguration kafkaConfig) {
-
 		this.userRepository = userRepository;
 		this.kafkaConfig = kafkaConfig;
 	}
@@ -47,11 +44,18 @@ public class UserServiceImpl implements UserService {
 	// this method is to save user to databases
 	@Override
 	public InputUser saveUser(InputUser inputUser) throws ProfileAlreadyExitsException {
+		
+		//Checking if the user already exists in the database
 		if (userRepository.findByUserId(inputUser.getUserId()) == null) {
+			
+			//Sending the data to corresponding topic names through KafkaTemplate
 			kafkaTemplate.send(topic, inputUser);
 			kafkaTemplate.send("details11", inputUser);
+			
 			// This is because we dont want to save the password in the userprofile database
 			inputUser.setPassword(null);
+			
+			//Saving the user data to the Mongo database
 			InputUser userSaved = userRepository.save(inputUser);
 			logger.info("Profile is saved into database-servicelayer");
 			return userSaved;
@@ -66,9 +70,11 @@ public class UserServiceImpl implements UserService {
 	// this method is to view user from databases
 	@Override
 	public InputUser viewUser(String userId) throws UserDoesNotExistsException {
+		
+		//Checking wheather the given user id is null or not
 		if (userRepository.findByUserId(userId) != null) {
 			InputUser findUser = userRepository.findByUserId(userId);
-			logger.info("Profile is viewd from database");
+			logger.info("Profile is retrived from database");
 			return findUser;
 			
 		} else {
