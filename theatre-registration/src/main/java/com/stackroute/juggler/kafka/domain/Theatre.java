@@ -2,10 +2,10 @@ package com.stackroute.juggler.kafka.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+
 //Domain object for theatre-registration details given by theatre-owner
-
 @Document
-
 public class Theatre {
 	@Id
 	private String theatreId;
@@ -22,6 +22,7 @@ public class Theatre {
 	private String[] typesOfSeats;
 	private int[] numberOfSeats;
 
+	//Full Args constructer
 	public Theatre(String theatreId, String email, String theatreLocation, String theatreCity, String theatreName,
 			String theatreLicenseNo, String totalnumberOfSeats, String[] screenedmovies, String[] runningmovies,
 			Seats seatLayout, String[] typesOfSeats, int[] numberOfSeats) {
@@ -40,10 +41,12 @@ public class Theatre {
 		this.numberOfSeats = numberOfSeats;
 	}
 
+	//NO-Args Constructer
 	public Theatre() {
 		super();
 	}
 
+	//Complete list of getters and setters
 	public String getTheatreId() {
 		return theatreId;
 	}
